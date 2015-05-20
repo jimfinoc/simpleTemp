@@ -26,6 +26,8 @@ valueTimeDate = None
 #print "username:" + str(usernameAndPassword['username'])
 #print "password:" + str(usernameAndPassword['password'])
 
+sensor2 = MCP9808.MCP9808()
+sensor2.begin()
 
 print "Press CTRL+Z to exit"
 
@@ -59,6 +61,8 @@ def main():
     try:
         print "this is normal printing"
         myColorText.printColor("this is in Yellow", YELLOW)
+        sensor2Data = sensor2.readTempC()
+        print sensor2Data
     except:
         print " cannot print in color"
 
