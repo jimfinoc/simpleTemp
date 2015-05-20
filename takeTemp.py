@@ -19,8 +19,8 @@ import MCP9808
 
 BLACK, RED, GREEN, YELLOW, BLUE, MAGENTA, CYAN, WHITE = range(8) #for using PrintColor
 
-fileData = open('../passwordFile.json')
-usernameAndPassword = json.load(fileData)
+#fileData = open('../passwordFile.json')
+#usernameAndPassword = json.load(fileData)
 valueTimeDate = None
 
 #print "username:" + str(usernameAndPassword['username'])
