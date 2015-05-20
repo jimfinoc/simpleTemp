@@ -6,7 +6,7 @@ import sys
 import json
 import time
 import datetime
-import requests
+#import requests
 #from Adafruit_7SegmentPlus import SevenSegment
 #from optparse import OptionParser
 import myColorText
