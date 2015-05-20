@@ -62,7 +62,7 @@ def main():
         print "this is normal printing"
         myColorText.printColor("this is in Yellow", YELLOW)
         sensor2Data = sensor2.readTempC()
-        print sensor2Data
+        print c_to_f(sensor2Data)
     except:
         print " cannot print in color"
 
