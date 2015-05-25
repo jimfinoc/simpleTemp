@@ -67,7 +67,8 @@ def main():
         print " cannot print in color"
     try:
         with open('/var/www/index.html', 'w') as f:
-        f.write("This is a test")
+            tempInF = str(c_to_f(sensor2Data))
+            f.write(tempInF)
         f.closed
 
 if __name__=="__main__":
