@@ -70,6 +70,8 @@ def main():
             tempInF = str(c_to_f(sensor2Data))
             f.write(tempInF)
         f.closed
+    except:
+        print " cannot open file"
 
 if __name__=="__main__":
     main()
