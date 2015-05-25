@@ -48,7 +48,7 @@ GMT = Zone(0,False,'GMT')
 # Fales if now DST
 EST = Zone(-5,True,'EST')
 
-print datetime.datetime.utcnow().strftime('%m/%d/%Y %H:%M:%S %Z')
+#print datetime.datetime.utcnow().strftime('%m/%d/%Y %H:%M:%S %Z')
 print datetime.datetime.now(GMT).strftime('%m/%d/%Y %H:%M:%S %Z')
 print datetime.datetime.now(EST).strftime('%m/%d/%Y %H:%M:%S %Z')
 
@@ -65,6 +65,10 @@ def main():
         print c_to_f(sensor2Data)
     except:
         print " cannot print in color"
+    try:
+        with open('/var/www/index.html', 'w') as f:
+        f.write("This is a test")
+        f.closed
 
 if __name__=="__main__":
     main()
