@@ -11,6 +11,7 @@ import datetime
 #from optparse import OptionParser
 import myColorText
 import MCP9808
+import socket
 
 # Make sure your higher level directory has the JSON file called passwordFile.json
 # The file should contain the information in the JSON format. See below for an example
@@ -59,6 +60,10 @@ def c_to_f(c):
 
 def main():
     try:
+        localip = socket.gethostbyname(socket.gethostname())
+    except:
+        localip = "No ip"
+    try:
         print "this is normal printing"
         myColorText.printColor("this is in Yellow", YELLOW)
         sensor2Data = sensor2.readTempC()
@@ -70,7 +75,7 @@ def main():
             tempInF = str(c_to_f(sensor2Data))
 #            f.write(tempInF)
 #            x = json.dumps({'Local Time' : datetime.datetime.now(EST).strftime('%m/%d/%Y %H:%M:%S %Z') , 'Temperature' : tempInF })
-            x = {'Local Time' : datetime.datetime.now(EST).strftime('%m/%d/%Y %H:%M:%S %Z') , 'Temperature' : tempInF }
+            x = {"Local ip": localip, 'Local Time' : datetime.datetime.now(EST).strftime('%m/%d/%Y %H:%M:%S %Z') , 'Temperature' : tempInF }
             json.dump(x,f)
         f.closed
     except:
