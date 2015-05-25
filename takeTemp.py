@@ -68,7 +68,9 @@ def main():
         localip = "No ip"
     try:
         print "this is normal printing"
-        myColorText.printColor("this is in Yellow", YELLOW)
+        myColorText.printColor("The ip addr is ", YELLOW)
+        print localip
+        myColorText.printColor("The temperature is ", GREEN)
         sensor2Data = sensor2.readTempC()
         print c_to_f(sensor2Data)
     except:
