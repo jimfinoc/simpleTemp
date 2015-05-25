@@ -65,9 +65,8 @@ def main():
 #        localip = socket.gethostbyname(socket.gethostname())
         localip = commands.getoutput("/sbin/ifconfig").split("\n")[9].split()[1][5:]
     except:
-        localip = "No ip"
+        localip = "No ip addr"
     try:
-        print "this is normal printing"
         myColorText.printColor("The ip addr is ", YELLOW)
         print localip
         myColorText.printColor("The temperature is ", GREEN)
@@ -80,7 +79,7 @@ def main():
             tempInF = str(c_to_f(sensor2Data))
 #            f.write(tempInF)
 #            x = json.dumps({'Local Time' : datetime.datetime.now(EST).strftime('%m/%d/%Y %H:%M:%S %Z') , 'Temperature' : tempInF })
-            x = {"Local ip": localip, 'Local Time' : datetime.datetime.now(EST).strftime('%m/%d/%Y %H:%M:%S %Z') , 'Temperature' : tempInF }
+            x = {"Local ip": localip, 'Local Time' : datetime.datetime.now(EST).strftime('%m/%d/%Y %H:%M:%S %Z') , 'Temperature' : tempInF , "Location": "Outside"}
             json.dump(x,f)
         f.closed
     except:
