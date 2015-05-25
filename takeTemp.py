@@ -12,6 +12,8 @@ import datetime
 import myColorText
 import MCP9808
 import socket
+import commands
+
 
 # Make sure your higher level directory has the JSON file called passwordFile.json
 # The file should contain the information in the JSON format. See below for an example
@@ -60,7 +62,8 @@ def c_to_f(c):
 
 def main():
     try:
-        localip = socket.gethostbyname(socket.gethostname())
+#        localip = socket.gethostbyname(socket.gethostname())
+        localip = commands.getoutput("/sbin/ifconfig").split("\n")[9].split()[1][5:]
     except:
         localip = "No ip"
     try:
