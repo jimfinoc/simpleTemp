@@ -76,7 +76,7 @@ def main():
         print " cannot print in color"
     try:
         with open('/var/www/index.html', 'w') as f:
-            tempInF = str(c_to_f(sensor2Data))
+            tempInF = float(c_to_f(sensor2Data))
 #            f.write(tempInF)
 #            x = json.dumps({'Local Time' : datetime.datetime.now(EST).strftime('%m/%d/%Y %H:%M:%S %Z') , 'Temperature' : tempInF })
             x = {"Local ip": localip, 'Local Time' : datetime.datetime.now(EST).strftime('%m/%d/%Y %H:%M:%S %Z') , 'Temperature' : tempInF , "Location": "Basement"}
