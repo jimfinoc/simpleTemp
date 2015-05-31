@@ -63,7 +63,7 @@ def c_to_f(c):
 def main():
     try:
 #        localip = socket.gethostbyname(socket.gethostname())
-        localip = commands.getoutput("/sbin/ifconfig").split("\n")[9].split()[1][5:]
+        localip = commands.getoutput("hostname -I")
     except:
         localip = "No ip addr"
     try:
