@@ -79,7 +79,7 @@ def main():
             tempInF = float(c_to_f(sensor2Data))
 #            f.write(tempInF)
 #            x = json.dumps({'Local Time' : datetime.datetime.now(EST).strftime('%m/%d/%Y %H:%M:%S %Z') , 'Temperature' : tempInF })
-            x = {"Local ip": localip, 'Local Time' : datetime.datetime.now(EST).strftime('%m/%d/%Y %H:%M:%S %Z') , 'Temperature' : tempInF , "Location": "Basement"}
+            x = {"IPAddress": localip, 'Time' : datetime.datetime.now(EST).strftime('%m/%d/%Y %H:%M:%S %Z') , 'Temperature' : tempInF , "Location": "Basement"}
             json.dump(x,f)
         f.closed
     except:
